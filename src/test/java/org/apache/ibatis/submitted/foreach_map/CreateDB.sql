@@ -14,40 +14,47 @@
 --    limitations under the License.
 --
 
-drop table string_string if exists;
+DROP TABLE string_string if EXISTS;
 
-create table string_string (
-    id identity,
-    key varchar(255),
-    value varchar(255)
+CREATE TABLE string_string
+(
+    id IDENTITY,
+    key   VARCHAR(255),
+    value VARCHAR(255)
 );
 
-drop table int_bool if exists;
+DROP TABLE int_bool if EXISTS;
 
-create table int_bool (
-    id identity,
-    key integer,
+CREATE TABLE int_bool
+(
+    id IDENTITY,
+    key   INTEGER,
     value boolean
 );
 
-drop table nested_bean if exists;
+DROP TABLE nested_bean if EXISTS;
 
-create table nested_bean (
-    id identity,
-    keya integer,
-    keyb boolean,
-    valuea integer,
+CREATE TABLE nested_bean
+(
+    id IDENTITY,
+    keya   INTEGER,
+    keyb   boolean,
+    valuea INTEGER,
     valueb boolean
 );
 
-drop table key_cols if exists;
+DROP TABLE key_cols if EXISTS;
 
-create table key_cols (
-    id identity,
-    col_a integer,
-    col_b integer
+CREATE TABLE key_cols
+(
+    id IDENTITY,
+    col_a INTEGER,
+    col_b INTEGER
 );
 
-insert into key_cols (id, col_a, col_b) values (1, 11, 222);
-insert into key_cols (id, col_a, col_b) values (2, 22, 222);
-insert into key_cols (id, col_a, col_b) values (3, 22, 333);
+INSERT INTO key_cols (id, col_a, col_b)
+VALUES (1, 11, 222);
+INSERT INTO key_cols (id, col_a, col_b)
+VALUES (2, 22, 222);
+INSERT INTO key_cols (id, col_a, col_b)
+VALUES (3, 22, 333);
