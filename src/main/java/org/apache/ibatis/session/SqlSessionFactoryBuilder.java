@@ -61,6 +61,13 @@ public class SqlSessionFactoryBuilder {
         return build(reader, null, properties);
     }
 
+    /**
+     * 通过输入流创建SqlSessionFactory
+     * 
+     * @param inputStream
+     *            配置文件六
+     * @return SqlSessionFactory
+     */
     public SqlSessionFactory build(InputStream inputStream) {
         return build(inputStream, null, null);
     }
