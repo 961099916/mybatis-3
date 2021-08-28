@@ -15,12 +15,12 @@
  */
 package org.apache.ibatis.mapping;
 
-import java.sql.ResultSet;
-
 import org.apache.ibatis.session.Configuration;
 import org.apache.ibatis.type.JdbcType;
 import org.apache.ibatis.type.TypeHandler;
 import org.apache.ibatis.type.TypeHandlerRegistry;
+
+import java.sql.ResultSet;
 
 /**
  * @author Clinton Begin
@@ -137,6 +137,7 @@ public class ParameterMapping {
 
     /**
      * Used for handling output of callable statements
+     *
      * @return
      */
     public ParameterMode getMode() {
@@ -145,6 +146,7 @@ public class ParameterMapping {
 
     /**
      * Used for handling output of callable statements
+     *
      * @return
      */
     public Class<?> getJavaType() {
@@ -153,6 +155,7 @@ public class ParameterMapping {
 
     /**
      * Used in the UnknownTypeHandler in case there is no handler for the property type
+     *
      * @return
      */
     public JdbcType getJdbcType() {
@@ -161,6 +164,7 @@ public class ParameterMapping {
 
     /**
      * Used for handling output of callable statements
+     *
      * @return
      */
     public Integer getNumericScale() {
@@ -169,6 +173,7 @@ public class ParameterMapping {
 
     /**
      * Used when setting parameters to the PreparedStatement
+     *
      * @return
      */
     public TypeHandler<?> getTypeHandler() {
@@ -177,6 +182,7 @@ public class ParameterMapping {
 
     /**
      * Used for handling output of callable statements
+     *
      * @return
      */
     public String getResultMapId() {
@@ -185,6 +191,7 @@ public class ParameterMapping {
 
     /**
      * Used for handling output of callable statements
+     *
      * @return
      */
     public String getJdbcTypeName() {
@@ -193,6 +200,7 @@ public class ParameterMapping {
 
     /**
      * Not used
+     *
      * @return
      */
     public String getExpression() {

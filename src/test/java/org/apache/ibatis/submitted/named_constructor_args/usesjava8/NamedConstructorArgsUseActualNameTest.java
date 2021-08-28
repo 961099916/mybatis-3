@@ -15,20 +15,19 @@
  */
 package org.apache.ibatis.submitted.named_constructor_args.usesjava8;
 
-import static org.junit.Assert.*;
-
-import java.io.Reader;
-import java.sql.Connection;
-
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.jdbc.ScriptRunner;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
-import org.apache.ibatis.submitted.named_constructor_args.usesjava8.Mapper;
 import org.apache.ibatis.submitted.named_constructor_args.User;
 import org.junit.BeforeClass;
 import org.junit.Test;
+
+import java.io.Reader;
+import java.sql.Connection;
+
+import static org.junit.Assert.assertEquals;
 
 public class NamedConstructorArgsUseActualNameTest {
 

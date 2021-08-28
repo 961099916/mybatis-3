@@ -15,24 +15,23 @@
  */
 package org.apache.ibatis.cache.decorators;
 
+import org.apache.ibatis.cache.Cache;
+import org.apache.ibatis.cache.CacheException;
+
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantLock;
 
-import org.apache.ibatis.cache.Cache;
-import org.apache.ibatis.cache.CacheException;
-
 /**
- * Simple blocking decorator 
- *
+ * Simple blocking decorator
+ * <p>
  * Simple and inefficient version of EhCache's BlockingCache decorator.
  * It sets a lock over a cache key when the element is not found in cache.
  * This way, other threads will wait until this element is filled instead of hitting the database.
  *
  * @author Eduardo Macarron
- *
  */
 public class BlockingCache implements Cache {
 

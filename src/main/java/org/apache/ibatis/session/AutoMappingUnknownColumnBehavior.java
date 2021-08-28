@@ -22,8 +22,8 @@ import org.apache.ibatis.mapping.MappedStatement;
 /**
  * Specify the behavior when detects an unknown column (or unknown property type) of automatic mapping target.
  *
- * @since 3.4.0
  * @author Kazuki Shimizu
+ * @since 3.4.0
  */
 public enum AutoMappingUnknownColumnBehavior {
 
@@ -66,10 +66,11 @@ public enum AutoMappingUnknownColumnBehavior {
 
     /**
      * Perform the action when detects an unknown column (or unknown property type) of automatic mapping target.
+     *
      * @param mappedStatement current mapped statement
-     * @param columnName column name for mapping target
-     * @param propertyName property name for mapping target
-     * @param propertyType property type for mapping target (If this argument is not null, {@link org.apache.ibatis.type.TypeHandler} for property type is not registered)
+     * @param columnName      column name for mapping target
+     * @param propertyName    property name for mapping target
+     * @param propertyType    property type for mapping target (If this argument is not null, {@link org.apache.ibatis.type.TypeHandler} for property type is not registered)
      */
     public abstract void doAction(MappedStatement mappedStatement, String columnName, String propertyName, Class<?> propertyType);
 

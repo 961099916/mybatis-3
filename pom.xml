@@ -240,6 +240,11 @@
             <version>1.7</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.11</version>
+        </dependency>
         <!-- postgresql driver is required to run the refcursor tests -->
         <dependency>
             <groupId>org.postgresql</groupId>
@@ -274,6 +279,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
                     <testCompilerArgument>${maven.compiler.testCompilerArgument}</testCompilerArgument>
+                    <source>8</source>
+                    <target>8</target>
                 </configuration>
             </plugin>
             <plugin>
@@ -385,11 +392,11 @@
         <profile>
             <id>java16</id>
             <activation>
-                <jdk>1.6</jdk>
+                <jdk>1.8</jdk>
             </activation>
             <properties>
-                <maven.compiler.testTarget>1.6</maven.compiler.testTarget>
-                <maven.compiler.testSource>1.6</maven.compiler.testSource>
+                <maven.compiler.testTarget>1.8</maven.compiler.testTarget>
+                <maven.compiler.testSource>1.8</maven.compiler.testSource>
                 <maven.compiler.testCompilerArgument/>
             </properties>
             <build>

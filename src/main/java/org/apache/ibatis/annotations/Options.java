@@ -15,14 +15,10 @@
  */
 package org.apache.ibatis.annotations;
 
-import java.lang.annotation.Documented;
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
-
 import org.apache.ibatis.mapping.ResultSetType;
 import org.apache.ibatis.mapping.StatementType;
+
+import java.lang.annotation.*;
 
 /**
  * @author Clinton Begin
@@ -36,11 +32,17 @@ public @interface Options {
      * The default is {@link FlushCachePolicy#DEFAULT}
      */
     public enum FlushCachePolicy {
-        /** <code>false</code> for select statement; <code>true</code> for insert/update/delete statement. */
+        /**
+         * <code>false</code> for select statement; <code>true</code> for insert/update/delete statement.
+         */
         DEFAULT,
-        /** Flushes cache regardless of the statement type. */
+        /**
+         * Flushes cache regardless of the statement type.
+         */
         TRUE,
-        /** Does not flush cache regardless of the statement type. */
+        /**
+         * Does not flush cache regardless of the statement type.
+         */
         FALSE
     }
 

@@ -19,11 +19,11 @@ import java.util.concurrent.locks.ReadWriteLock;
 
 /**
  * SPI for cache providers.
- *
+ * <p>
  * One instance of cache will be created for each namespace.
- *
+ * <p>
  * The cache implementation must have a constructor that receives the cache id as an String parameter.
- *
+ * <p>
  * MyBatis will pass the namespace as id to the constructor.
  *
  * <pre>
@@ -47,7 +47,7 @@ public interface Cache {
     String getId();
 
     /**
-     * @param key Can be any object but usually it is a {@link CacheKey}
+     * @param key   Can be any object but usually it is a {@link CacheKey}
      * @param value The result of a select.
      */
     void putObject(Object key, Object value);
@@ -68,7 +68,6 @@ public interface Cache {
      * This way other threads will wait for the value to be
      * available instead of hitting the database.
      *
-     *
      * @param key The key
      * @return Not used
      */
@@ -88,7 +87,7 @@ public interface Cache {
 
     /**
      * Optional. As of 3.2.6 this method is no longer called by the core.
-     *
+     * <p>
      * Any locking needed by the cache must be provided internally by the cache provider.
      *
      * @return A ReadWriteLock

@@ -49,8 +49,8 @@
                      #set($sep="")
                      #foreach($id in $_parameter.ids)
                        $sep @{$it.next($id), javaType = int}
-                              #set( $sep =",")
-                              #end
+                                             #set( $sep =",")
+                                             #end
             )
     </select>
 

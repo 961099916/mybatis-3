@@ -21,8 +21,8 @@ import java.sql.Statement;
 /**
  * Utility for {@link java.sql.Statement}.
  *
- * @since 3.4.0
  * @author Kazuki Shimizu
+ * @since 3.4.0
  */
 public class StatementUtil {
 
@@ -35,8 +35,9 @@ public class StatementUtil {
      * <p>
      * Update a query timeout to apply a transaction timeout.
      * </p>
-     * @param statement a target statement
-     * @param queryTimeout a query timeout
+     *
+     * @param statement          a target statement
+     * @param queryTimeout       a query timeout
      * @param transactionTimeout a transaction timeout
      * @throws SQLException if a database access error occurs, this method is called on a closed <code>Statement</code>
      */

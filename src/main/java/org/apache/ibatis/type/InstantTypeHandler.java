@@ -15,18 +15,14 @@
  */
 package org.apache.ibatis.type;
 
-import java.sql.CallableStatement;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Timestamp;
-import java.time.Instant;
-
 import org.apache.ibatis.lang.UsesJava8;
 
+import java.sql.*;
+import java.time.Instant;
+
 /**
- * @since 3.4.5
  * @author Tomas Rohovsky
+ * @since 3.4.5
  */
 @UsesJava8
 public class InstantTypeHandler extends BaseTypeHandler<Instant> {

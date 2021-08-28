@@ -15,19 +15,15 @@
  */
 package org.apache.ibatis.type;
 
-import java.sql.CallableStatement;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Timestamp;
+import org.apache.ibatis.lang.UsesJava8;
+
+import java.sql.*;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 
-import org.apache.ibatis.lang.UsesJava8;
-
 /**
- * @since 3.4.5
  * @author Tomas Rohovsky
+ * @since 3.4.5
  */
 @UsesJava8
 public class ZonedDateTimeTypeHandler extends BaseTypeHandler<ZonedDateTime> {

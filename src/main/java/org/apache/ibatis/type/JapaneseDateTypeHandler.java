@@ -15,21 +15,17 @@
  */
 package org.apache.ibatis.type;
 
-import java.sql.CallableStatement;
-import java.sql.Date;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import org.apache.ibatis.lang.UsesJava8;
+
+import java.sql.*;
 import java.time.LocalDate;
 import java.time.chrono.JapaneseDate;
-
-import org.apache.ibatis.lang.UsesJava8;
 
 /**
  * Type Handler for {@link JapaneseDate}.
  *
- * @since 3.4.5
  * @author Kazuki Shimizu
+ * @since 3.4.5
  */
 @UsesJava8
 public class JapaneseDateTypeHandler extends BaseTypeHandler<JapaneseDate> {

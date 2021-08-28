@@ -30,20 +30,23 @@ import org.junit.Test;
 import org.mockito.Mock;
 
 import javax.sql.DataSource;
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.Reader;
+import java.io.StringReader;
 import java.sql.Clob;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
-import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 /**
  * Tests for {@link ClobReaderTypeHandler}.
  *
- * @since 3.4.0
  * @author Kazuki Shimizu
+ * @since 3.4.0
  */
 public class ClobReaderTypeHandlerTest extends BaseTypeHandlerTest {
 

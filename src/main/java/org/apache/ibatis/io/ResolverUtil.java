@@ -15,14 +15,14 @@
  */
 package org.apache.ibatis.io;
 
+import org.apache.ibatis.logging.Log;
+import org.apache.ibatis.logging.LogFactory;
+
 import java.io.IOException;
 import java.lang.annotation.Annotation;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-
-import org.apache.ibatis.logging.Log;
-import org.apache.ibatis.logging.LogFactory;
 
 /**
  * <p>ResolverUtil is used to locate classes that are available in the/a class path and meet
@@ -81,12 +81,16 @@ public class ResolverUtil<T> {
     public static class IsA implements Test {
         private Class<?> parent;
 
-        /** Constructs an IsA test using the supplied Class as the parent class/interface. */
+        /**
+         * Constructs an IsA test using the supplied Class as the parent class/interface.
+         */
         public IsA(Class<?> parentType) {
             this.parent = parentType;
         }
 
-        /** Returns true if type is assignable to the parent type supplied in the constructor. */
+        /**
+         * Returns true if type is assignable to the parent type supplied in the constructor.
+         */
         @Override
         public boolean matches(Class<?> type) {
             return type != null && parent.isAssignableFrom(type);
@@ -105,12 +109,16 @@ public class ResolverUtil<T> {
     public static class AnnotatedWith implements Test {
         private Class<? extends Annotation> annotation;
 
-        /** Constructs an AnnotatedWith test for the specified annotation type. */
+        /**
+         * Constructs an AnnotatedWith test for the specified annotation type.
+         */
         public AnnotatedWith(Class<? extends Annotation> annotation) {
             this.annotation = annotation;
         }
 
-        /** Returns true if the type is annotated with the class provided to the constructor. */
+        /**
+         * Returns true if the type is annotated with the class provided to the constructor.
+         */
         @Override
         public boolean matches(Class<?> type) {
             return type != null && type.isAnnotationPresent(annotation);
@@ -122,7 +130,9 @@ public class ResolverUtil<T> {
         }
     }
 
-    /** The set of matches being accumulated. */
+    /**
+     * The set of matches being accumulated.
+     */
     private Set<Class<? extends T>> matches = new HashSet<Class<? extends T>>();
 
     /**
@@ -167,7 +177,7 @@ public class ResolverUtil<T> {
      * of a non-interface class, subclasses will be collected.  Accumulated classes can be
      * accessed by calling {@link #getClasses()}.
      *
-     * @param parent the class of interface to find subclasses or implementations of
+     * @param parent       the class of interface to find subclasses or implementations of
      * @param packageNames one or more package names to scan (including subpackages) for classes
      */
     public ResolverUtil<T> findImplementations(Class<?> parent, String... packageNames) {
@@ -187,7 +197,7 @@ public class ResolverUtil<T> {
      * Attempts to discover classes that are annotated with the annotation. Accumulated
      * classes can be accessed by calling {@link #getClasses()}.
      *
-     * @param annotation the annotation that should be present on matching classes
+     * @param annotation   the annotation that should be present on matching classes
      * @param packageNames one or more package names to scan (including subpackages) for classes
      */
     public ResolverUtil<T> findAnnotated(Class<? extends Annotation> annotation, String... packageNames) {
@@ -209,9 +219,9 @@ public class ResolverUtil<T> {
      * true the class is retained.  Accumulated classes can be fetched by calling
      * {@link #getClasses()}.
      *
-     * @param test an instance of {@link Test} that will be used to filter classes
+     * @param test        an instance of {@link Test} that will be used to filter classes
      * @param packageName the name of the package from which to start scanning for
-     *        classes, e.g. {@code net.sourceforge.stripes}
+     *                    classes, e.g. {@code net.sourceforge.stripes}
      */
     public ResolverUtil<T> find(Test test, String packageName) {
         String path = getPackagePath(packageName);
@@ -245,7 +255,7 @@ public class ResolverUtil<T> {
      * resolved classes if and only if it is approved by the Test supplied.
      *
      * @param test the test used to determine if the class matches
-     * @param fqn the fully qualified name of a class
+     * @param fqn  the fully qualified name of a class
      */
     @SuppressWarnings("unchecked")
     protected void addIfMatching(Test test, String fqn) {

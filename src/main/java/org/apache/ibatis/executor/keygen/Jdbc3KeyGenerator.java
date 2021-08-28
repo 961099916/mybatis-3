@@ -15,16 +15,6 @@
  */
 package org.apache.ibatis.executor.keygen;
 
-import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
-import java.util.Map;
-
 import org.apache.ibatis.binding.BindingException;
 import org.apache.ibatis.executor.Executor;
 import org.apache.ibatis.executor.ExecutorException;
@@ -35,6 +25,12 @@ import org.apache.ibatis.type.JdbcType;
 import org.apache.ibatis.type.TypeHandler;
 import org.apache.ibatis.type.TypeHandlerRegistry;
 
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.*;
+
 /**
  * @author Clinton Begin
  * @author Kazuki Shimizu
@@ -43,6 +39,7 @@ public class Jdbc3KeyGenerator implements KeyGenerator {
 
     /**
      * A shared instance.
+     *
      * @since 3.4.3
      */
     public static final Jdbc3KeyGenerator INSTANCE = new Jdbc3KeyGenerator();

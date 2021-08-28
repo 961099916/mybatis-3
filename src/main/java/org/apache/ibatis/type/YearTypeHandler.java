@@ -15,17 +15,17 @@
  */
 package org.apache.ibatis.type;
 
+import org.apache.ibatis.lang.UsesJava8;
+
 import java.sql.CallableStatement;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.Year;
 
-import org.apache.ibatis.lang.UsesJava8;
-
 /**
- * @since 3.4.5
  * @author Björn Raupach
+ * @since 3.4.5
  */
 @UsesJava8
 public class YearTypeHandler extends BaseTypeHandler<Year> {

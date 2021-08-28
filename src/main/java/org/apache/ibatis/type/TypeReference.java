@@ -22,8 +22,8 @@ import java.lang.reflect.Type;
  * References a generic type.
  *
  * @param <T> the referenced type
- * @since 3.1.0
  * @author Simone Tripodi
+ * @since 3.1.0
  */
 public abstract class TypeReference<T> {
 
