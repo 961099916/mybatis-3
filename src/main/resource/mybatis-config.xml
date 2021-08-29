@@ -5,7 +5,7 @@
 <!-- 根标签 -->
 <configuration>
     <properties>
-        <property name="driver" value="com.mysql.jdbc.Driver"/>
+        <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
         <property name="url"
                   value="jdbc:mysql://rm-bp198756mgv7b33hjbo.mysql.rds.aliyuncs.com:3306/test?useUnicode=true&amp;characterEncoding=UTF8&amp;useSSL=false&amp;autoReconnect=true"/>
         <property name="username" value="zhangjiahao"/>
