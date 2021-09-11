@@ -22,6 +22,5 @@ public class Test {
         // 第二个参数：指定传入sql的参数：这里是用户id
         Teacher test = sqlSession.selectOne("TeacherMapper.selectTest", 1);
         System.out.println(test.getName());
-
     }
 }
